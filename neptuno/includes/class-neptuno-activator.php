@@ -3,11 +3,11 @@
 /**
  * Fired during plugin activation
  *
- * @link       http://example.com
- * @since      1.0.0
+ * @link              http://metodopilardominguez.com
+ * @since             1.0.0
  *
- * @package    Plugin_Name
- * @subpackage Plugin_Name/includes
+ * @package    neptuno
+ * @subpackage neptuno/includes
  */
 
 /**
@@ -16,11 +16,11 @@
  * This class defines all code necessary to run during the plugin's activation.
  *
  * @since      1.0.0
- * @package    Plugin_Name
- * @subpackage Plugin_Name/includes
- * @author     Your Name <email@example.com>
+ * @package    neptuno
+ * @subpackage neptuno/includes
+ * @author     Diego Medina <diegomedina@metodopilardominguez.com>
  */
-class Plugin_Name_Activator {
+class Neptuno_Activator {
 
 	/**
 	 * Short Description. (use period)
