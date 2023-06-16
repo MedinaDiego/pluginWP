@@ -20,7 +20,8 @@
  * @subpackage Plugin_Name/admin
  * @author     Your Name <email@example.com>
  */
-class Neptuno_Admin {
+class Neptuno_Admin
+{
 
 	/**
 	 * The ID of this plugin.
@@ -47,11 +48,11 @@ class Neptuno_Admin {
 	 * @param      string    $plugin_name       The name of this plugin.
 	 * @param      string    $version    The version of this plugin.
 	 */
-	public function __construct( $plugin_name, $version ) {
+	public function __construct($plugin_name, $version)
+	{
 
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
-
 	}
 
 	/**
@@ -59,7 +60,8 @@ class Neptuno_Admin {
 	 *
 	 * @since    1.0.0
 	 */
-	public function enqueue_styles() {
+	public function enqueue_styles()
+	{
 
 		/**
 		 * This function is provided for demonstration purposes only.
@@ -73,8 +75,7 @@ class Neptuno_Admin {
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/plugin-name-admin.css', array(), $this->version, 'all' );
-
+		wp_enqueue_style($this->plugin_name, plugin_dir_url(__FILE__) . 'css/plugin-name-admin.css', array(), $this->version, 'all');
 	}
 
 	/**
@@ -82,7 +83,8 @@ class Neptuno_Admin {
 	 *
 	 * @since    1.0.0
 	 */
-	public function enqueue_scripts() {
+	public function enqueue_scripts()
+	{
 
 		/**
 		 * This function is provided for demonstration purposes only.
@@ -96,8 +98,62 @@ class Neptuno_Admin {
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/plugin-name-admin.js', array( 'jquery' ), $this->version, false );
-
+		wp_enqueue_script($this->plugin_name, plugin_dir_url(__FILE__) . 'js/plugin-name-admin.js', array('jquery'), $this->version, false);
 	}
 
+	public function mainMenu()
+	{
+		/*add_menu_page(
+			'Añadir Seguro', //titulo de pagina 
+			'Tarificador', //titulo del menu
+			'manage_options', //capability
+			plugin_dir_path(__FILE__) . 'partials/atlantis-admin-display.php', //slug
+			null, //function del contenido
+			plugin_dir_url(__FILE__) . 'img/menu-icon.svg', //icono 
+			'15'
+		); //priority
+		add_submenu_page(
+			plugin_dir_path(__FILE__) . 'partials/atlantis-admin-display.php',
+			'Añadir Seguro',
+			'Añadir Seguro',
+			'manage_options',
+			plugin_dir_path(__FILE__) . 'partials/atlantis-admin-display.php',
+			null
+		);
+		add_submenu_page(
+			plugin_dir_path(__FILE__) . 'partials/atlantis-admin-display.php',
+			'Añadir Embarcación',
+			'Añadir Embarcación',
+			'manage_options',
+			plugin_dir_path(__FILE__) . 'partials/atlantis-admin-display-ae.php',
+			null
+		);
+		add_submenu_page(
+			plugin_dir_path(__FILE__) . 'partials/atlantis-admin-display.php',
+			'Añadir Aseguradora',
+			'Añadir Aseguradora',
+			'manage_options',
+			plugin_dir_path(__FILE__) . 'partials/atlantis-admin-display-aa.php',
+			null
+		);
+
+		add_submenu_page(
+			plugin_dir_path(__FILE__) . 'partials/atlantis-admin-display.php',
+			'Añadir tipo seguro',
+			'Añadir tipo seguro',
+			'manage_options',
+			plugin_dir_path(__FILE__) . 'partials/atlantis-admin-display-ats.php',
+			null
+		);*/
+
+		add_menu_page(
+			'TITUOLO',
+			'custom menu',
+			'manage_options',
+			'',
+			null,
+			null,
+			15
+		);
+	}
 }
