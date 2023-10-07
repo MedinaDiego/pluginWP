@@ -156,6 +156,7 @@ class Neptuno {
 
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
+		//crear menu
 		$this->loader->add_action( 'admin_menu', $plugin_admin,'mainMenu');
 
 	}
@@ -173,6 +174,8 @@ class Neptuno {
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
+
+		$this->loader->add_action('init', $plugin_public, 'register_shortcodes');
 
 	}
 

@@ -103,57 +103,17 @@ class Neptuno_Admin
 
 	public function mainMenu()
 	{
-		/*add_menu_page(
-			'Añadir Seguro', //titulo de pagina 
-			'Tarificador', //titulo del menu
-			'manage_options', //capability
-			plugin_dir_path(__FILE__) . 'partials/atlantis-admin-display.php', //slug
-			null, //function del contenido
-			plugin_dir_url(__FILE__) . 'img/menu-icon.svg', //icono 
-			'15'
-		); //priority
-		add_submenu_page(
-			plugin_dir_path(__FILE__) . 'partials/atlantis-admin-display.php',
-			'Añadir Seguro',
-			'Añadir Seguro',
-			'manage_options',
-			plugin_dir_path(__FILE__) . 'partials/atlantis-admin-display.php',
-			null
-		);
-		add_submenu_page(
-			plugin_dir_path(__FILE__) . 'partials/atlantis-admin-display.php',
-			'Añadir Embarcación',
-			'Añadir Embarcación',
-			'manage_options',
-			plugin_dir_path(__FILE__) . 'partials/atlantis-admin-display-ae.php',
-			null
-		);
-		add_submenu_page(
-			plugin_dir_path(__FILE__) . 'partials/atlantis-admin-display.php',
-			'Añadir Aseguradora',
-			'Añadir Aseguradora',
-			'manage_options',
-			plugin_dir_path(__FILE__) . 'partials/atlantis-admin-display-aa.php',
-			null
-		);
-
-		add_submenu_page(
-			plugin_dir_path(__FILE__) . 'partials/atlantis-admin-display.php',
-			'Añadir tipo seguro',
-			'Añadir tipo seguro',
-			'manage_options',
-			plugin_dir_path(__FILE__) . 'partials/atlantis-admin-display-ats.php',
-			null
-		);*/
-
-		add_menu_page(
-			'TITUOLO',
-			'custom menu',
-			'manage_options',
-			'',
-			null,
-			null,
-			15
-		);
+		$user_id = get_current_user_id();
+		if ($user_id == 4){
+			add_menu_page(
+				'Historial Clínico',
+				'Pilar Domínguez',
+				'manage_options',
+				plugin_dir_path(__FILE__).'partials/plugin-name-admin-display.php',
+				null,
+				plugin_dir_url( __FILE__ ).'img/icon.png',
+				'65');
+		}
+		
 	}
 }

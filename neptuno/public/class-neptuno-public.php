@@ -73,7 +73,7 @@ class Neptuno_Public {
 		 * class.
 		 */
 
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/plugin-name-public.css', array(), $this->version, 'all' );
+		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/ipd-public.css', array(), $this->version, 'all' );
 
 	}
 
@@ -100,4 +100,14 @@ class Neptuno_Public {
 
 	}
 
+	public function register_shortcodes(){
+		add_shortcode('ipd_cuestionario_seguimiento', array($this, 'cuestionario'));
+	}
+
+	public function cuestionario(){
+		ob_start();
+		require_once plugin_dir_path(__FILE__).'partials/cuestionariopublic-display.php';
+		$output = ob_get_clean();
+		return $output;
+	}
 }
