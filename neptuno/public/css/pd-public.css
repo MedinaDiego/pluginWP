@@ -8,16 +8,20 @@
  .row_ipd::after {
   content: "";
   clear: both;
-  display: table;
+  display: flex;
 }
 .example {
   padding: 20px;
-  color: white;
+  color: #000000;
 }
 
 fieldset.borde_form {
   padding: 4%;
   border: 1px solid black;
+}
+[class*="col-"] {
+  float: left;
+  padding: 5px 0;
 }
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {

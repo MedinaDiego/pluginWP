@@ -75,7 +75,7 @@ class Neptuno_Admin
 		 * class.
 		 */
 
-		wp_enqueue_style($this->plugin_name, plugin_dir_url(__FILE__) . 'css/plugin-name-admin.css', array(), $this->version, 'all');
+		wp_enqueue_style($this->plugin_name, plugin_dir_url(__FILE__) . 'css/ipd-admin.css', array(), $this->version, 'all');
 	}
 
 	/**
@@ -103,17 +103,26 @@ class Neptuno_Admin
 
 	public function mainMenu()
 	{
-		$user_id = get_current_user_id();
-		if ($user_id == 4){
+		//$user_id = get_current_user_id();
+		//if ($user_id == 4){
 			add_menu_page(
-				'Historial Clínico',
+				'Pacientes de Pilar Domínguez',
 				'Pilar Domínguez',
 				'manage_options',
-				plugin_dir_path(__FILE__).'partials/plugin-name-admin-display.php',
+				plugin_dir_path(__FILE__).'partials/paciente-admin-display.php',
 				null,
 				plugin_dir_url( __FILE__ ).'img/icon.png',
 				'65');
-		}
+			
+			add_submenu_page(
+				plugin_dir_path(__FILE__).'partials/paciente-admin-display.php',
+				'Historial Clínico A',
+				'Historial Clínico B',
+				'manage_options',
+				plugin_dir_path(__FILE__).'partials/historial-clinico-display.php',
+				null
+			);
+		//}
 		
 	}
 }
