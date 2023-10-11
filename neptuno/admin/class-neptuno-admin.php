@@ -75,7 +75,8 @@ class Neptuno_Admin
 		 * class.
 		 */
 
-		wp_enqueue_style($this->plugin_name, plugin_dir_url(__FILE__) . 'css/ipd-admin.css', array(), $this->version, 'all');
+		wp_enqueue_style($this->plugin_name, plugin_dir_url(__FILE__) . 'css/ipd-admin1.css', array(), $this->version, 'all');
+		wp_enqueue_style( 'font_fa', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css', array(), $this->version, 'all' );
 	}
 
 	/**
@@ -103,26 +104,16 @@ class Neptuno_Admin
 
 	public function mainMenu()
 	{
-		//$user_id = get_current_user_id();
-		//if ($user_id == 4){
-			add_menu_page(
-				'Pacientes de Pilar Domínguez',
-				'Pilar Domínguez',
-				'manage_options',
-				plugin_dir_path(__FILE__).'partials/paciente-admin-display.php',
-				null,
-				plugin_dir_url( __FILE__ ).'img/icon.png',
-				'65');
-			
-			add_submenu_page(
-				plugin_dir_path(__FILE__).'partials/paciente-admin-display.php',
-				'Historial Clínico A',
-				'Historial Clínico B',
-				'manage_options',
-				plugin_dir_path(__FILE__).'partials/historial-clinico-display.php',
-				null
-			);
-		//}
+		add_menu_page('Pilar Domínguez', 'Pilar Domínguez', 'manage_options', plugin_dir_path(__FILE__).'partials/inicio-admin-display.php',null,plugin_dir_url( __FILE__ ).'img/icon.png', '65');
 		
+		add_submenu_page(plugin_dir_path(__FILE__).'partials/inicio-admin-display.php', 'Pilar Domínguez', 'Inicio',
+	'manage_options', plugin_dir_path(__FILE__).'partials/inicio-admin-display.php');
+
+		add_submenu_page( plugin_dir_path(__FILE__).'partials/inicio-admin-display.php', 'Mis Pacientes - Pilar Domínguez', 'Pacientes',
+	'manage_options', plugin_dir_path(__FILE__).'partials/historial-clinico-display.php');
+
+	add_submenu_page( plugin_dir_path(__FILE__).'partials/inicio-admin-display.php', 'Mis Diagnósticos', 'Diagnóstico',
+	'manage_options', plugin_dir_path(__FILE__).'partials/diagnostico-display.php');
+			
 	}
 }
